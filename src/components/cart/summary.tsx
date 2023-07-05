@@ -20,7 +20,9 @@ export default function Summary() {
     }
 
     if (searchParams.get("canceled")) {
-      toast.error("Something Went Wrong");
+      toast.success(
+        "You're cart has been saved, you did not make a purchase :)"
+      );
     }
   }, [searchParams, removeAll]);
 
