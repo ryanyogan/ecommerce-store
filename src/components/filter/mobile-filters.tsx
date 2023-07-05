@@ -4,6 +4,7 @@ import { Color, Size } from "@/types";
 import { Dialog } from "@headlessui/react";
 import { Plus, X } from "lucide-react";
 import { useState } from "react";
+import Filter from ".";
 import Button from "../ui/button";
 import IconnButton from "../ui/icon-button";
 
@@ -37,6 +38,11 @@ export default function MobileFilters({ sizes, colors }: MobileFiltersProps) {
           <Dialog.Panel className="relative transition duration-300 ease-in-out ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl">
             <div className="flex items-center justify-end px-4">
               <IconnButton onClick={onClose} icon={<X size={15} />} />
+            </div>
+
+            <div className="p-4">
+              <Filter valueKey="sizeId" name="Sizes" data={sizes} />
+              <Filter valueKey="colorId" name="Colors" data={colors} />
             </div>
           </Dialog.Panel>
         </div>
