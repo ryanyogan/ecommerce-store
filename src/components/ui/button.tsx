@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
@@ -13,6 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         ref={ref}
+        {...props}
       >
         {children}
       </button>
