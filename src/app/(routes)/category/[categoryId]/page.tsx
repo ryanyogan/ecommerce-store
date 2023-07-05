@@ -27,10 +27,10 @@ export default async function CategoryPage({
   searchParams,
 }: CategoryPageProps) {
   const [sizes, colors, category, products] = await Promise.all([
-    getSizes(),
-    getColors(),
-    getCategory(params.categoryId),
-    getProducts({
+    await getSizes(),
+    await getColors(),
+    await getCategory(params.categoryId),
+    await getProducts({
       categoryId: params.categoryId,
       colorId: searchParams.colorId,
       sizeId: searchParams.sizeId,
