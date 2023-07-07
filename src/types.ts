@@ -1,6 +1,7 @@
 export type Billboard = {
   id: string;
   label: string;
+  featured: boolean;
   imageUrl: string;
 };
 

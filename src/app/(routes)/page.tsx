@@ -1,4 +1,4 @@
-import { getBillboard } from "@/actions/get-billboard";
+import { getFeaturedBillboard } from "@/actions/get-featured-billboard";
 import { getProducts } from "@/actions/get-products";
 import Billboard from "@/components/billboard";
 import ProductList from "@/components/product-list";
@@ -8,7 +8,7 @@ export const revalidate = 0;
 
 export default async function HomePage() {
   const [billboard, products] = await Promise.all([
-    getBillboard("bee049d6-094d-4cc3-91eb-5241a2bf8675"),
+    getFeaturedBillboard(),
     getProducts({ isFeatured: true }),
   ]);
 
