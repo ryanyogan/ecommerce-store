@@ -1,6 +1,7 @@
 "use client";
 
 import useCart from "@/hooks/use-cart";
+import usePreviewModal from "@/hooks/use-preview-modal";
 import { Product } from "@/types";
 import { ShoppingCart } from "lucide-react";
 import { MouseEventHandler } from "react";
@@ -13,8 +14,11 @@ interface InfoProps {
 
 export default function Info({ data }: InfoProps) {
   const cart = useCart();
+  const previewModal = usePreviewModal();
+
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
+    previewModal.onClose();
     cart.addItem(data);
   };
 
